@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+ int s,t,a,b,m,n,i,a1[99999],o[99999],c[99999],d[99999],q=0,w=0;
+ cin>>s>>t;
+ cin>>a>>b;
+ cin>>m>>n;
+ for(i=0;i<m;i++)
+        {
+         cin>>a1[i];
+        }
+ for(i=0;i<n;i++)
+        { 
+         cin>>o[i];
+        }
+ for(i=0;i<m;i++)
+        {
+         c[i]=a+a1[i];
+        }
+ for(i=0;i<n;i++)
+        { 
+         d[i]=b+o[i];
+        }
+  for(i=0;i<m;i++)
+        {
+         if(c[i]>=s && c[i]<=t)
+                {
+                 q++;
+                }
+        }
+for(i=0;i<n;i++)
+        { 
+         if(d[i]>=s && d[i]<=t)
+                {
+                 w++;
+                }
+        }
+ cout<<q<<endl;
+ cout<<w<<endl;
+
+ return 0;
+}
+
+
