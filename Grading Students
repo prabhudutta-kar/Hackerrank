@@ -1,0 +1,52 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+int main() {
+    int n; 
+    scanf("%d", &n);
+    int *grades = malloc(sizeof(int) * n);
+    int *b = malloc(sizeof(int) * n);
+    int *c = malloc(sizeof(int) * n);
+    int *d = malloc(sizeof(int) * n);
+    for(int g_i = 0; g_i < n; g_i++)
+    {
+       scanf("%d",&grades[g_i]);
+    }
+    for(int g_i = 0; g_i < n; g_i++)
+    {
+        if(grades[g_i]>37)
+           b[g_i]=grades[g_i]%5;
+    }
+     for(int g_i = 0; g_i < n; g_i++)
+     {
+         if(b[g_i]==0)
+             c[g_i]=grades[g_i];
+         else if(b[g_i]==1)
+             c[g_i]=grades[g_i]+4;
+         else if(b[g_i]==2)
+             c[g_i]=grades[g_i]+3;
+         else if(b[g_i]==3)
+             c[g_i]=grades[g_i]+2;
+         else if(b[g_i]==4)
+             c[g_i]=grades[g_i]+1;
+     }
+     for(int g_i = 0; g_i < n; g_i++)
+     {
+         if(c[g_i]-grades[g_i] < 3)
+             d[g_i]=c[g_i];
+         else
+             d[g_i]=grades[g_i];
+     }
+    for(int g_i = 0; g_i < n; g_i++)
+    {
+        if(grades[g_i]>37)
+            printf("%d\n",d[g_i]);
+        else
+            printf("%d\n",grades[g_i]);
+    }
+    return 0;
+}
